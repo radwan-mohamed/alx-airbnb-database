@@ -1,0 +1,6 @@
+-- Partition Booking table by start_date
+ALTER TABLE bookings PARTITION BY RANGE (start_date) (
+    PARTITION p1 VALUES LESS THAN ('2023-01-01'),
+    PARTITION p2 VALUES LESS THAN ('2024-01-01'),
+    PARTITION p3 VALUES LESS THAN MAXVALUE
+);
